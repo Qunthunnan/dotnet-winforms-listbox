@@ -79,7 +79,7 @@ namespace WinFormsLists
             Console.WriteLine(((ListBox)sender).SelectedItem);
             Console.WriteLine(((ListBox)sender).SelectedValue); */
             // Console.WriteLine(((ListBox)sender).SelectedItem.GetType().Name);
-            selectedEmployeeValueLabel.Text = ((ListBox)sender).SelectedValue.ToString();
+            selectedEmployeeValueLabel.Text = employeesListBox.SelectedIndex.ToString() + " " + employeesListBox.SelectedItem.ToString();
 
                 // ((Employee)((ListBox)sender).SelectedItem).Name;
         }
@@ -105,12 +105,23 @@ namespace WinFormsLists
             if (((ListBox)sender).SelectedItem != null)
             {
                 removeButton.Visible = true;
+                editButton.Visible = true;
             }
             else
             {
                 removeButton.Visible = false;
+                editButton.Visible = false;
                 selectedEmployeeValueLabel.Text = "";
             }
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            employees[employeesListBox.SelectedIndex].Name = nameTextBox.Text;
+            employees[employeesListBox.SelectedIndex].Salary = decimal.Parse(salaryTextBox.Text);
+            
+            employees.Add(new Employee());
+            employees.RemoveAt(employees.Count - 1);
         }
     }
 }

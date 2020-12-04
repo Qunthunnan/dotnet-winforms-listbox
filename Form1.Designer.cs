@@ -33,13 +33,14 @@ namespace WinFormsLists
             this.SelectedEmployeeLabel = new System.Windows.Forms.Label();
             this.selectedEmployeeValueLabel = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.addButton = new System.Windows.Forms.Button();
             this.salaryLabel = new System.Windows.Forms.Label();
             this.salaryTextBox = new System.Windows.Forms.TextBox();
-            this.addButton = new System.Windows.Forms.Button();
-            this.removeButton = new System.Windows.Forms.Button();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -81,6 +82,7 @@ namespace WinFormsLists
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.editButton);
             this.splitContainer1.Panel1.Controls.Add(this.addButton);
             this.splitContainer1.Panel1.Controls.Add(this.salaryLabel);
             this.splitContainer1.Panel1.Controls.Add(this.salaryTextBox);
@@ -98,21 +100,15 @@ namespace WinFormsLists
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 3;
             // 
-            // nameLabel
+            // addButton
             // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(12, 12);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(38, 13);
-            this.nameLabel.TabIndex = 3;
-            this.nameLabel.Text = "Name:";
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.Location = new System.Drawing.Point(56, 9);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nameTextBox.TabIndex = 0;
+            this.addButton.Location = new System.Drawing.Point(15, 77);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 6;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // salaryLabel
             // 
@@ -130,15 +126,29 @@ namespace WinFormsLists
             this.salaryTextBox.Size = new System.Drawing.Size(200, 20);
             this.salaryTextBox.TabIndex = 4;
             // 
-            // addButton
+            // nameLabel
             // 
-            this.addButton.Location = new System.Drawing.Point(15, 77);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 6;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(12, 12);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(38, 13);
+            this.nameLabel.TabIndex = 3;
+            this.nameLabel.Text = "Name:";
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Location = new System.Drawing.Point(56, 9);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nameTextBox.TabIndex = 0;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(150, 10);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(287, 23);
+            this.progressBar.TabIndex = 4;
+            this.progressBar.Visible = false;
             // 
             // removeButton
             // 
@@ -151,13 +161,15 @@ namespace WinFormsLists
             this.removeButton.Visible = false;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
-            // progressBar
+            // editButton
             // 
-            this.progressBar.Location = new System.Drawing.Point(150, 10);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(287, 23);
-            this.progressBar.TabIndex = 4;
-            this.progressBar.Visible = false;
+            this.editButton.Location = new System.Drawing.Point(116, 76);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(75, 23);
+            this.editButton.TabIndex = 7;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // Form1
             // 
@@ -190,6 +202,7 @@ namespace WinFormsLists
         private System.Windows.Forms.TextBox salaryTextBox;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Button editButton;
     }
 }
 
